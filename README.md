@@ -15,3 +15,5 @@ Before proceeding, user must download npm. Supabase will also be used, which is 
 After installing npm, there are other packages to install, including: express, body-parser, dotenv, supabase/supabase-js, and nodemon. 
 
 After getting in and checking that the environmental variables are set up correctly, people can go ahead and start using it. Although the project seems positive, there are some limitations. One of which is the vulnerability of any hacks.
+
+Vercel Link: https://inst-377-final-project-opal.vercel.app/
