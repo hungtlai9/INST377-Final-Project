@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <title>Currency Converter - Home</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 0;
+      }
+
+      nav {
+        background-color: grey;
+        padding: 15px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+
+      main {
+        padding: 30px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      canvas {
+        width: 900px;
+        height: 500px;
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html"> Home </a>
+      <a href="converter.html"> Converter </a>
+      <a href="about.html"> About </a>
+    </nav>
+
+    <main>
+      <h1>Currency Converter App</h1>
+
+      <p>
+        This website allows users to convert currencies.
+      </p>
+
+      <a href="converter.html">
+        <button>Begin Converting</button>
+      </a>
+
+      <br />
+      <br />
+
+      <h2>Top Currency Rates Today</h2>
+
+      <canvas id="topCurrencyChart"> </canvas>
+
+      <br><br>
+    </main>
+
+    <script>
+      const currencyLabels = [];
+      const currencyRates = [];
+
+      fetch(
+        "https://api.frankfurter.dev/v2/rates?base=USD&quotes=EUR,GBP,JPY,CAD,CNY",
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          data.forEach(function (item) {
+            currencyLabels.push(item.quote);
+
+            currencyRates.push(item.rate);
+          });
+
+          const ctx = document.getElementById("topCurrencyChart");
+
+          new Chart(
+            ctx,
+            {
+              type: "bar",
+
+              data: {
+                labels: currencyLabels,
+
+                datasets: [
+                  {
+                    label: "Exchange Rate from USD",
+
+                    data: currencyRates,
+
+                    borderWidth: 2,
+                  },
+                ],
+              },
+
+              options: {
+                indexAxis: "y",
+                elements: {
+                  bar: {
+                    borderWidth: 2,
+                  },
+                },
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: "right",
+                  },
+                  title: {
+                    display: true,
+
+                    text: "Top Currency Rates Today",
+                  },
+                },
+              },
+            },
+          );
+        });
+    </script>
+  </body>
+</html>

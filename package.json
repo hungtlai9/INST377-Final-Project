@@ -1,0 +1,29 @@
+{
+  "name": "inst377-final-project",
+  "version": "1.0.0",
+  "description": "INST377 Final Project - Currency Conversion App",
+  "homepage": "https://github.com/hungtlai9/INST377-Final-Project#readme",
+  "bugs": {
+    "url": "https://github.com/hungtlai9/INST377-Final-Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungtlai9/INST377-Final-Project.git"
+  },
+  "license": "ISC",
+  "author": "Hung Lai",
+  "type": "commonjs",
+"main": "index.js",
+"scripts": {
+  "start": "nodemon index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "usa-state-validator": "^1.0.6"
+  }
+}

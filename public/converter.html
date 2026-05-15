@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="converter.js"></script>
+
+    <style>
+      body {
+        background-color: moccasin;
+        font-family: Arial;
+        margin: 0;
+      }
+      nav {
+        background-color: peru;
+        padding: 15px;
+        text-align: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+
+      ul {
+        list-style-position: inside;
+        padding: 0;
+      }
+
+      main {
+        padding: 30px;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+      canvas {
+        width: 700px;
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="converter.html">Converter</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <main>
+      <h1>Convert Currency</h1>
+
+      <form id="currencyForm">
+        <label>Amount:</label>
+        <input type="number" id="amount" required />
+
+        <label>From Currency:</label>
+        <select id="fromCurrency"></select>
+
+        <label>To Currency:</label>
+        <select id="toCurrency"></select>
+
+        <button type="submit">Convert</button>
+      </form>
+
+      <h2 id="result"></h2>
+      <h2>Conversion History</h2>
+      <ul id="historyList"></ul>
+
+      <h2>Conversion Chart</h2>
+      <canvas id="conversionChart"></canvas>
+    </main>
+  </body>
+</html>
