@@ -66,9 +66,7 @@ function convertCurrency(event){
 function saveHistory(conversion){
   let history =
     JSON.parse(localStorage.getItem("conversionHistory")) || [];
-
   history.push(conversion);
-
   localStorage.setItem(
     "conversionHistory",
     JSON.stringify(history)
@@ -78,9 +76,7 @@ function saveHistory(conversion){
 function displayHistory(){
   let history =
     JSON.parse(localStorage.getItem("conversionHistory")) || [];
-
   historyList.innerHTML = "";
-
   history.forEach(function(item){
     const li = document.createElement("li");
     li.textContent = item.message;

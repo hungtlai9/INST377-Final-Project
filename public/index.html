@@ -7,7 +7,7 @@
     <style>
       body {
         font-family: Arial;
-        margin: 0;
+        margin:auto;
       }
 
       nav {
@@ -90,16 +90,12 @@
             ctx,
             {
               type: "bar",
-
               data: {
                 labels: currencyLabels,
-
                 datasets: [
                   {
                     label: "Exchange Rate from USD",
-
                     data: currencyRates,
-
                     borderWidth: 2,
                   },
                 ],
@@ -119,7 +115,6 @@
                   },
                   title: {
                     display: true,
-
                     text: "Top Currency Rates Today",
                   },
                 },
